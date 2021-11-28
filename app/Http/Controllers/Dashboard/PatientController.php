@@ -122,6 +122,7 @@ class PatientController extends Controller
         $delete = $data->delete();
         
         if($delete > 0){
+            Alert::success('Berhasil', 'Data Berhasil Dihapus');
             return redirect('dashboard/patients')->with('success');
         }
     }

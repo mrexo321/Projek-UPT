@@ -2,10 +2,11 @@
 
 namespace App\Http\Controllers\Dashboard;
 
+use Error;
 use App\Models\Animal;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-use Error;
+use RealRashid\SweetAlert\Facades\Alert;
 
 class AnimalController extends Controller
 {
@@ -124,9 +125,11 @@ class AnimalController extends Controller
         $hapus = $hewan->delete();
 
         if($hapus > 0){
-            return redirect('dashboard/animals')->with('success' , 'Data Berhasil Dihapus Njing');
+            Alert::success('Berhasil', 'Data Berhasil Dihapus');
+            return redirect('dashboard/animals');
         }
 
-        return redirect('dashboard/animals')->with('failed' , 'Data Gagal Dihapus Njing');
+        Alert::error('Gagal', 'Data Gagal Dihapus ');
+        return redirect('dashboard/animals');
     }
 }
