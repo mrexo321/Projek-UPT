@@ -31,9 +31,6 @@ Route::post('/daftar' , [DataController::class , 'store']);
 // Route::resource('/dashboard/pasiens' , PasienController::class)->middleware('auth');
 Route::prefix('dashboard')->group(function(){
     Route::resource('/patients', PatientController::class);
-});
-
-Route::prefix('dashboard')->group(function(){
     Route::resource('/animals', AnimalController::class);
 });
 
