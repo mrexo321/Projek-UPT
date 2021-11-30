@@ -16,8 +16,8 @@ class CreateRacesTable extends Migration
         Schema::create('races', function (Blueprint $table) {
             $table->id();
             $table->foreignId('animal_id');
-            $table->string('name')->unique()->constrained()->cascadeOnDelete();
-            $table->string('slug')->unique()->constrained()->cascadeOnDelete();
+            $table->string('name')->unique();
+            $table->string('slug')->unique();
             $table->timestamps();
         });
     }

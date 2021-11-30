@@ -23,6 +23,7 @@
           <th scope="col">Jenis Hewan</th>
           <th scope="col">Nama Hewan</th>
           <th scope="col">Di input pada</th>
+          <th scope="col">ras</th>
           <th scope="col">Action</th>
         </tr>
       </thead>
@@ -31,7 +32,7 @@
         <tr>
           <td>{{ $loop->iteration }}</td>
           <td>{{ $patient->owner }}</td>
-          <td>{{ $patient->animal->name }}</td>
+          <td>{{ $patient->animal->name}}</td>
           <td>{{ $patient->pet_name }}</td>
           <td>{{ $patient->created_at->timezone('Asia/jakarta')->format('d M Y H:i:s')}}</td>
           <td>

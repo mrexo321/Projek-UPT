@@ -15,8 +15,8 @@ class CreatePatientsTable extends Migration
     {
         Schema::create('patients', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('animal_id');
-            $table->foreignId('race_id');
+            $table->foreignId('animal_id')->constrained()->cascadeOnDelete();
+            $table->foreignId('race_id')->constrained()->cascadeOnDelete();
             $table->string('owner');
             $table->string('address');
             $table->string('pet_name');
