@@ -2,14 +2,14 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Animal;
+use App\Models\Race;
 use Illuminate\Http\Request;
 
 class ApiController extends Controller
 {
-    public function animal() {
-        $animal = Animal::all();
+    public function race() {
+        $race = Race::where('animal_id', request('id'))->get();
 
-        return $animal;
+        return $race;
     }
 }

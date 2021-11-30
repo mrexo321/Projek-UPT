@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ApiController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\DataController;
 use App\Http\Controllers\LoginController;
@@ -33,6 +34,8 @@ Route::prefix('dashboard')->group(function(){
     Route::resource('/patients', PatientController::class);
     Route::resource('/animals', AnimalController::class);
 });
+
+Route::get('/api/race', [ApiController::class, 'race'])->name('api.race');
 
 // Route::middleware(['auth'])->prefix('dashboard')->group(function () {
 //     Route::resource('patient', PatientController::class);

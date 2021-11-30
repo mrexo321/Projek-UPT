@@ -24,21 +24,40 @@ class DatabaseSeeder extends Seeder
             'password' => bcrypt('password'),
             'tipe' => 2
         ]);
-        
-        Race::create([
-            'name' => 'Kampung',
-            'slug' => 'kampung'
-        ]);
 
-        Race::create([
-            'name' => 'Persia',
-            'slug' => 'persia'
-        ]);
+        $race = [
+            [
+                'animal_id' => 1,
+                'name' => 'Kampung',
+                'slug' => 'kampung'
+            ],
 
-        Race::create([
-            'name' => 'Anggora',
-            'slug' => 'anggora'
-        ]);
+            [
+                'animal_id' => 1,
+                'name' => 'Persia',
+                'slug' => 'persia'
+            ],
+
+            [
+                'animal_id' => 1,
+                'name' => 'Anggora',
+                'slug' => 'anggora'
+            ],
+
+            [
+                'animal_id' => 2,
+                'name' => 'Husky',
+                'slug' => 'husky'
+            ],
+
+            [
+                'animal_id' => 2,
+                'name' => 'Bulldog',
+                'slug' => 'bulldog'
+            ],
+        ];
+
+        Race::insert($race);
 
         Animal::create([
             'name' => 'Kucing',
@@ -65,6 +84,6 @@ class DatabaseSeeder extends Seeder
             'slug' => 'musang'
         ]);
         User::factory(3)->create();
-        
+
     }
 }
