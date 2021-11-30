@@ -27,6 +27,7 @@
         <tr>
           <th scope="col">No</th>
           <th scope="col">Nama</th>
+          <th scope="col">ras</th>
           <th scope="col">Action</th>
         </tr>
       </thead>
@@ -35,7 +36,7 @@
         <tr>
           <td>{{ $loop->iteration }}</td>
           <td>{{ $animal->name }}</td>
-          
+
           <td>
               <a class="badge bg-info" href="/dashboard/animals/{{ $animal->slug }}"><span data-feather="eye"></span></a>
               <a class="badge bg-success" href="/dashboard/animals/{{ $animal->slug }}/edit"><span data-feather="edit"></span></a>
